@@ -1,0 +1,47 @@
+{% for sche in schedules %}
+	<a href="{{sche.file.url}}" target="_blank">{{sche.title}}</a>
+	<p>{{sche.description}}</p>
+	<p>{{sche.date}}</p>
+
+{% endfor %}
+
+
+<form enctype="multipart/form-data" method="post" id="schedulefile_form" novalidate="">
+   {% csrf_token %}
+   <div>
+      <fieldset class="module aligned ">
+         <div class="form-row field-title">
+            <div>
+               <label class="required" for="id_title">Title:</label>
+               <input type="text" name="title" value="Schedule for monday" class="vTextField" maxlength="200" required="" id="id_title">
+            </div>
+         </div>
+         <div class="form-row field-description">
+            <div>
+               <label class="required" for="id_description">Description:</label>
+               <textarea name="description" cols="40" rows="10" class="vLargeTextField" required="" id="id_description">This is the schedule for monday</textarea>
+            </div>
+         </div>
+         <div class="form-row field-file">
+            <div>
+               <label for="id_file">Schedule file:</label>
+               <p class="file-upload">Currently: <a href="/media/INS_eQwo2ED.pdf">INS_eQwo2ED.pdf</a>
+                  <span class="clearable-file-input">
+                  <input type="checkbox" name="file-clear" id="file-clear_id">
+                  <label for="file-clear_id">Clear</label></span><br>
+                  Change:
+                  <input type="file" name="file" id="id_file">
+               </p>
+            </div>
+         </div>
+      </fieldset>
+      <div class="submit-row">
+         <input type="submit" value="Save" class="default" name="_save">
+         <p class="deletelink-box"><a href="/admin/schedule/schedulefile/1/delete/" class="deletelink">Delete</a></p>
+         <input type="submit" value="Save and add another" name="_addanother">
+         <input type="submit" value="Save and continue editing" name="_continue">
+      </div>
+      <script id="django-admin-form-add-constants" src="/static/admin/js/change_form.js" async=""></script>
+      <script id="django-admin-prepopulated-fields-constants" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]"></script>
+   </div>
+</form>
