@@ -12,7 +12,9 @@
 	[
 		{
 			"path": "."
+		},
+		{
+			"path": "/media/minhthienk/Data2/Coding Projects/ins-server/simple-django-filter-master"
 		}
-	],
-	"virtualenv": "/media/minhthienk/Data1/Coding Projects/django_ins/env"
+	]
 }

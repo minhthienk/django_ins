@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+{% load widget_tweaks %}
+
+{% block content %}
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Mon</th>
+        <th>Tue</th>
+        <th>Wed</th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+        <th>Sun</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in table %}
+        <tr>
+          <td>{{ row.mon |safe|linebreaks}}</td>
+          <td>{{ row.tue | linebreaks  }}</td>
+          <td>{{ row.wed | linebreaks  }}</td>
+          <td>{{ row.thu | linebreaks  }}</td>
+          <td>{{ row.fri | linebreaks  }}</td>
+          <td>{{ row.sat | linebreaks  }}</td>
+          <td>{{ row.sun | linebreaks  }}</td>
+
+      {% endfor %}
+    </tbody>
+  </table>
+
+
+{% endblock %}
+
+

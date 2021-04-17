@@ -15,10 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
+from .views import week_schedule_view
 
 app_name = 'schedule'  # here for namespacing of urls.
 
 urlpatterns = [
-    path("", views.schedule, name='schedule'),
-] 
+    path('', week_schedule_view, name='week-schedule'),
+]
+
